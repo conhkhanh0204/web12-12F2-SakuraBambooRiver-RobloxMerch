@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Khẩu trang Bảo hộ</title>
+   <link rel="stylesheet" href="styles10.css">
+</head>
+<body>
+   <header class="navbar">
+       <nav>
+           <ul>
+               <li><a href="index.html">Trang chủ</a></li>
+               <li class="active"><a href="trang2.html">Sản phẩm</a></li>
+               <li><a href="index12.html">Giới thiệu</a></li>
+           </ul>
+       </nav>
+   </header>
+
+
+   <main class="product-detail-section">
+       <div class="container">
+           <div class="product-detail-layout">
+              
+               <div class="product-gallery">
+                   <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXff6RWmprh-XqYRRnaqGutdHIsPyZa44_zGIpox7eBLUDIL3m3I6xGdSgtm851LiD_7iOLoLQ0tBptAwIAnl8Hz3Uf49ve4mZTB549GwIPn-jQ05fGY0xQU00DAX1FnGQMmKP24zfS93b_14qfpzyZ8Rxgz?key=3oDUB8FANQSkZp2ox0mw6g" alt="Khẩu trang Bảo hộ" class="main-image">
+               </div>
+
+
+               <div class="product-info">
+                   <h1>Khẩu trang Vải kháng khuẩn (Họa tiết Việt Nam)</h1>
+                   <p class="sku">SKU: RBLX-MASK-007</p>
+                  
+                   <p class="price-detail" id="productPrice">50.000 VNĐ</p>
+
+
+                   <div class="description">
+                       <h3>Mô tả sản phẩm</h3>
+                       <p>Khẩu trang vải kháng khuẩn, có thể giặt và tái sử dụng nhiều lần. Thiết kế độc đáo với các họa tiết truyền thống hoặc cờ Việt Nam, vừa bảo vệ sức khỏe vừa thể hiện niềm tự hào dân tộc. Chất liệu thoáng khí, đeo thoải mái suốt cả ngày.</p>
+                      
+                       <h3>Đặc điểm nổi bật:</h3>
+                       <ul>
+                           <li>Lớp: 3 lớp vải kháng khuẩn, chống bụi mịn và UV.</li>
+                           <li>Tái sử dụng: Có thể giặt sạch và sử dụng lại (khuyến nghị 30 lần giặt).</li>
+                           <li>Độ bền: Dây đeo tai co giãn tốt, không gây đau vành tai.</li>
+                           <li>Phù hợp: Nam và Nữ, đi làm, đi học hoặc đi chơi.</li>
+                       </ul>
+                   </div>
+                  
+                   <div class="options">
+                       <label for="quantity">Số lượng:</label>
+                       <input type="number" id="quantity" value="1" min="1">
+                   </div>
+
+
+                   <a href="#" class="btn-buy">THÊM VÀO GIỎ HÀNG</a>
+                   <a href="#" class="btn-wishlist">❤️ Yêu thích</a>
+               </div>
+           </div>
+          
+       </div>
+   </main>
+
+
+   <script>
+       const BASE_PRICE = 50000;
+      
+       const quantityInput = document.getElementById('quantity');
+       const priceDisplay = document.getElementById('productPrice');
+
+
+       function formatCurrency(number) {
+           return number.toLocaleString('vi-VN') + ' VNĐ';
+       }
+
+
+       function updateTotalPrice() {
+           let quantity = parseInt(quantityInput.value);
+
+
+           if (quantity < 1 || isNaN(quantity)) {
+               quantity = 1;
+               quantityInput.value = 1;
+           }
+
+
+           const totalPrice = BASE_PRICE * quantity;
+
+
+           priceDisplay.textContent = formatCurrency(totalPrice);
+       }
+
+
+       quantityInput.addEventListener('input', updateTotalPrice);
+
+
+       document.addEventListener('DOMContentLoaded', updateTotalPrice);
+   </script>
+</body>
+</html>
+

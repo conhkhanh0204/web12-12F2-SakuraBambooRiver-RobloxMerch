@@ -1,0 +1,131 @@
+
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+
+body {
+   background-color: #000;
+   color: #fff;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+
+body::before {
+   content: '';
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url(https://lh7-rt.googleusercontent.com/docsz/AD_4nXdlgBOp3RNHcVyGcUMaKuflrcAWRc7rJ88pyvlFoja2IpClb7FK6-8AbzwsYuBGb0mshsMG0GbaU84DdXuMIr_dvonb_ns3PuedbOX9YkHU3TYf9s2GWAgSi6qekhd7dWIgGo_2AnFf5oiobGGEGtU-KCJJ0bg?key=3oDUB8FANQSkZp2ox0mw6g);
+   background-size: cover;
+   background-position: center;
+   opacity: 0.4;
+   z-index: -1;
+}
+
+
+.navbar {
+   background-color: #d32f2f;
+   height: 60px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+   padding: 0 40px;
+}
+
+
+.navbar nav ul {
+   list-style: none;
+   display: flex;
+   height: 100%;
+   align-items: center;
+}
+
+
+.navbar nav ul li {
+   margin-right: 30px;
+}
+
+
+.navbar nav ul li a {
+   color: #fff;
+   text-decoration: none;
+   padding: 0 5px;
+   height: 60px;
+   display: flex;
+   align-items: center;
+   font-weight: 600;
+   font-size: 1.05em;
+   position: relative;
+   transition: color 0.3s;
+}
+
+
+.navbar nav ul li a:hover:not(.active) {
+   color: #ffcdd2;
+}
+
+
+.navbar nav ul li a.active {
+   color: #fff;
+}
+
+
+.navbar nav ul li a.active::after {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 3px;
+   background-color: #ffffff;
+   border-radius: 2px 2px 0 0;
+}
+
+
+.hero {
+   flex-grow: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+
+.hero h1 {
+   font-size: 3em;
+   margin-bottom: 10px;
+}
+
+
+.hero p {
+   font-size: 1.2em;
+   margin-bottom: 40px;
+}
+
+
+.btn {
+   display: inline-block;
+   background-color: #e53935;
+   color: #fff;
+   text-decoration: none;
+   padding: 15px 30px;
+   border: none;
+   border-radius: 5px;
+   font-size: 1.1em;
+   font-weight: bold;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+
+.btn:hover {
+   background-color: #c62828;
+}

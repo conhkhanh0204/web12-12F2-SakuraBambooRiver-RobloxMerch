@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Thắt lưng Da Rồng</title>
+   <link rel="stylesheet" href="styles11.css">
+</head>
+<body>
+   <header class="navbar">
+       <nav>
+           <ul>
+               <li><a href="index.html">Trang chủ</a></li>
+               <li class="active"><a href="trang2.html">Sản phẩm</a></li>
+               <li><a href="index12.html">Giới thiệu</a></li>
+           </ul>
+       </nav>
+   </header>
+
+
+   <main class="product-detail-section">
+       <div class="container">
+           <div class="product-detail-layout">
+              
+               <div class="product-gallery">
+                   <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcnU3gZsmaxydl72rk64A3f3ojlqrTnsql4Sz0EoR0PuEVHy6OR5rRkzrJcO-Kq5bXOtSzjub2LmcTpzkTDkAg3R8AbQysP1VWnYQC7IKcWXx0s5BSQemg2bK7apE4i2TqjXWM_gLC7VfcP-lNrBnnxEFUz?key=3oDUB8FANQSkZp2ox0mw6g" alt="Thắt lưng Da Rồng" class="main-image">
+               </div>
+
+
+               <div class="product-info">
+                   <h1>Thắt lưng Da Họa tiết Rồng Việt Nam</h1>
+                   <p class="sku">SKU: RBLX-BELT-015</p>
+                  
+                   <p class="price-detail" id="productPrice">350.000 VNĐ</p>
+
+
+                   <div class="description">
+                       <h3>Mô tả sản phẩm</h3>
+                       <p>Thắt lưng da cao cấp với khóa kim loại chạm khắc họa tiết Rồng Việt Nam tinh xảo. Sản phẩm mang lại vẻ ngoài lịch lãm và khẳng định phong cách. Chất liệu da bền bỉ, sử dụng lâu dài, phù hợp với cả trang phục công sở và trang phục thường ngày.</p>
+                      
+                       <h3>Đặc điểm nổi bật:</h3>
+                       <ul>
+                           <li>Chất liệu: Da bò thật 100% hoặc da tổng hợp cao cấp.</li>
+                           <li>Khóa: Khóa tự động hoặc khóa kim loại chạm khắc Rồng.</li>
+                           <li>Kích thước: Chiều rộng tiêu chuẩn, nhiều kích cỡ chiều dài.</li>
+                           <li>Đóng gói: Hộp đựng sang trọng, thích hợp làm quà tặng.</li>
+                       </ul>
+                   </div>
+                  
+                   <div class="options">
+                       <label for="size">Kích cỡ:</label>
+                       <select id="size">
+                           <option value="90">90 cm</option>
+                           <option value="100" selected>100 cm</option>
+                           <option value="110">110 cm</option>
+                           <option value="120">120 cm</option>
+                       </select>
+                      
+                       <label for="quantity">Số lượng:</label>
+                       <input type="number" id="quantity" value="1" min="1">
+                   </div>
+
+
+                   <a href="#" class="btn-buy">THÊM VÀO GIỎ HÀNG</a>
+                   <a href="#" class="btn-wishlist">❤️ Yêu thích</a>
+               </div>
+           </div>
+       </div>
+   </main>
+
+
+   <script>
+       const BASE_PRICE = 350000;
+      
+       const quantityInput = document.getElementById('quantity');
+       const priceDisplay = document.getElementById('productPrice');
+
+
+       function formatCurrency(number) {
+           return number.toLocaleString('vi-VN') + ' VNĐ';
+       }
+
+
+       function updateTotalPrice() {
+           let quantity = parseInt(quantityInput.value);
+
+
+           if (quantity < 1 || isNaN(quantity)) {
+               quantity = 1;
+               quantityInput.value = 1;
+           }
+
+
+           const totalPrice = BASE_PRICE * quantity;
+
+
+           priceDisplay.textContent = formatCurrency(totalPrice);
+       }
+
+
+       quantityInput.addEventListener('input', updateTotalPrice);
+
+
+       document.addEventListener('DOMContentLoaded', updateTotalPrice);
+   </script>
+</body>
+</html>
+

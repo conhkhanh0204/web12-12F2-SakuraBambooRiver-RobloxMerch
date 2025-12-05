@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Nón lá truyền thống Việt Nam</title>
+   <link rel="stylesheet" href="styles7.css">
+</head>
+<body>
+   <header class="navbar">
+       <nav>
+           <ul>
+               <li><a href="index.html">Trang chủ</a></li>
+               <li class="active"><a href="trang2.html">Sản phẩm</a></li>
+               <li><a href="index12.html">Giới thiệu</a></li>
+           </ul>
+       </nav>
+   </header>
+
+
+   <main class="product-detail-section">
+       <div class="container">
+           <div class="product-detail-layout">
+              
+               <div class="product-gallery">
+                   <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdkFKHcRJyV68wENvAZT_BBBWyceb3DMJMLGzjBXy2ZHaV_HmOcULa29fcMYfym-kAPsAuUYTE8PjG0GVzQJ_XnWuUeQQQyQlw0dzgCE6tyWU8ndGVx3mgeHOjwAKHyzCw4PI-bBr9iUimvQqnnhcm3sMNT6w?key=3oDUB8FANQSkZp2ox0mw6g" alt="Nón lá Roblox" class="main-image">
+               </div>
+
+
+               <div class="product-info">
+                   <h1>Nón lá Việt Nam - Phiên bản Roblox Cổ Trang</h1>
+                   <p class="sku">SKU: RBLX-HAT-002</p>
+                  
+                   <p class="price-detail" id="productPrice">120.000 VNĐ</p>
+
+
+                   <div class="description">
+                       <h3>Mô tả sản phẩm</h3>
+                       <p>Chiếc Nón lá được thiết kế riêng cho các nhân vật Roblox, mô phỏng chân thực và tinh tế nét đẹp truyền thống của Việt Nam. Chất liệu nhẹ, bền, mang lại cảm giác dễ chịu khi đội trong game hoặc phù hợp làm đồ lưu niệm.</p>
+                      
+                       <h3>Đặc điểm nổi bật:</h3>
+                       <ul>
+                           <li>Chất liệu: Lá cọ tự nhiên và vật liệu tổng hợp an toàn.</li>
+                           <li>Thiết kế: Dạng nón chóp truyền thống, có quai đeo.</li>
+                           <li>Màu sắc: Tự nhiên và có thể tùy chỉnh họa tiết trang trí.</li>
+                           <li>Phù hợp: Trang phục cổ trang hoặc làm vật phẩm sưu tập.</li>
+                       </ul>
+                   </div>
+                  
+                   <div class="options">
+                       <label for="quantity">Số lượng:</label>
+                       <input type="number" id="quantity" value="1" min="1">
+                   </div>
+
+
+                   <a href="#" class="btn-buy">THÊM VÀO GIỎ HÀNG</a>
+                   <a href="#" class="btn-wishlist">❤️ Yêu thích</a>
+               </div>
+           </div>
+          
+       </div>
+   </main>
+
+
+   <script>
+       const BASE_PRICE = 120000;
+      
+       const quantityInput = document.getElementById('quantity');
+       const priceDisplay = document.getElementById('productPrice');
+
+
+       function formatCurrency(number) {
+           return number.toLocaleString('vi-VN') + ' VNĐ';
+       }
+
+
+       function updateTotalPrice() {
+           let quantity = parseInt(quantityInput.value);
+
+
+           if (quantity < 1 || isNaN(quantity)) {
+               quantity = 1;
+               quantityInput.value = 1;
+           }
+
+
+           const totalPrice = BASE_PRICE * quantity;
+
+
+           priceDisplay.textContent = formatCurrency(totalPrice);
+       }
+
+
+       quantityInput.addEventListener('input', updateTotalPrice);
+
+
+       document.addEventListener('DOMContentLoaded', updateTotalPrice);
+   </script>
+</body>
+</html>
+
+
+

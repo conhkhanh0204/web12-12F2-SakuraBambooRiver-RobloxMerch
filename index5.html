@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Chi tiết sản phẩm - Móc khóa Noob Cổ Điển</title>
+   <link rel="stylesheet" href="styles5.css">
+</head>
+<body>
+   <header class="navbar">
+       <nav>
+           <ul>
+               <li><a href="index.html">Trang chủ</a></li>
+               <li class="active"><a href="trang2.html">Sản phẩm</a></li>
+               <li><a href="gioithieu.html">Giới thiệu</a></li>
+           </ul>
+       </nav>
+   </header>
+
+
+   <main class="product-detail-section">
+       <div class="container">
+           <div class="product-detail-layout">
+              
+               <div class="product-gallery">
+                   <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfwks3HD5cspup1NRdUSRFtsz1no3xdyoL76ZYmfHgt24qe-sDu_HW8MWo4bxnUPRGknWpokqvvYEBegrtCWFmSY8K5IVv37UWRlzAn5rikIDbYVejlFg_kixYQjG1CDJ8RqOUIOCe9wuZ8m4L90ZVX7-EpXA?key=3oDUB8FANQSkZp2ox0mw6g" alt="Móc khóa Noob Cổ Điển" class="main-image">
+               </div>
+
+
+               <div class="product-info">
+                   <h1>Móc khóa Noob Cổ Điển - Biểu tượng Roblox</h1>
+                   <p class="sku">SKU: RBLX-KEY-005</p>
+                  
+                   <p class="price-detail" id="productPrice">50.000 VNĐ</p>
+
+
+                   <div class="description">
+                       <h3>Mô tả sản phẩm</h3>
+                       <p>Móc khóa Noob huyền thoại là biểu tượng của sự khởi đầu trong thế giới Roblox. Thiết kế 3D mô phỏng chân thật nhân vật Noob cổ điển với độ bền cao, chống trầy xước. Phù hợp để trang trí balô, chìa khóa hoặc làm quà tặng.</p>
+                      
+                       <h3>Đặc điểm nổi bật:</h3>
+                       <ul>
+                           <li>Chất liệu: Acrylic cao cấp, chống nước.</li>
+                           <li>Kích thước: Khoảng 5cm (vừa vặn, tiện lợi).</li>
+                           <li>Thiết kế: Hình ảnh Noob 3D sắc nét, màu sắc tươi sáng.</li>
+                           <li>Công dụng: Treo chìa khóa, trang trí túi xách, hộp bút.</li>
+                       </ul>
+                   </div>
+                  
+                   <div class="options">
+                       <label for="quantity">Số lượng:</label>
+                       <input type="number" id="quantityInput" value="1" min="1">
+                   </div>
+
+
+                   <a href="#" class="btn-buy">THÊM VÀO GIỎ HÀNG</a>
+                   <a href="#" class="btn-wishlist">❤️ Yêu thích</a>
+               </div>
+           </div>
+       </div>
+   </main>
+
+
+   <script>
+       // CẬP NHẬT GIÁ GỐC CHO MÓC KHÓA (50.000 VNĐ)
+       const BASE_PRICE = 50000;
+      
+       const quantityInput = document.getElementById('quantityInput');
+       const priceDisplay = document.getElementById('productPrice');
+
+
+       function formatCurrency(number) {
+           return number.toLocaleString('vi-VN') + ' VNĐ';
+       }
+
+
+       function updateTotalPrice() {
+           let quantity = parseInt(quantityInput.value);
+
+
+           if (quantity < 1 || isNaN(quantity)) {
+               quantity = 1;
+               quantityInput.value = 1;
+           }
+
+
+           const totalPrice = BASE_PRICE * quantity;
+
+
+           priceDisplay.textContent = formatCurrency(totalPrice);
+       }
+
+
+       quantityInput.addEventListener('input', updateTotalPrice);
+
+
+       document.addEventListener('DOMContentLoaded', updateTotalPrice);
+   </script>
+</body>
+</html>
